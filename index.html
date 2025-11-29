@@ -673,7 +673,7 @@ div.show {
         footer {
             background-color: var(--dark-bg);
             color: white;
-            padding: 60px 0 30px;
+            padding: 30px;
             text-align: center;
         }
 
@@ -683,6 +683,11 @@ div.show {
             margin-bottom: 30px;
             color: var(--blush-pink);
         }
+@media (max-width: 600px) {
+    .hashtag {
+        font-size: 1.5rem;
+    }
+}
 
         .social-links {
             display: flex;
@@ -829,9 +834,9 @@ div.show {
 </head>
 <body>
     <!-- Preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="heartbeat-preloader">K ❤️ A</div>
-    </div>
+    </div> -->
 
     <!-- Header -->
     <header>
@@ -853,10 +858,10 @@ div.show {
     </header>
 
     <!-- Hero Section -->
-    <section id="hero">
+    <section id="hero" style="margin-top: 80px; padding: 65px;">
         <div class="particles" id="heroParticles"></div>
         <div class="hero-content">
-            <h2 class="hero-tagline">Two Hearts, One Beat</h2>
+            <!-- <h2 class="hero-tagline">Two Hearts, One Beat</h2> -->
             <h1 class="couple-names">
                 <span>Kaustubh</span>
                 <span class="heart-pulse">❤</span>
@@ -881,7 +886,7 @@ div.show {
                     <div class="countdown-label">Seconds</div>
                 </div>
             </div>
-            <a href="#rsvp" class="btn">Save The Date</a>
+            <!-- <a href="#rsvp" class="btn">Save The Date</a> -->
         </div>
         <div class="ecg-line"></div>
     </section>
@@ -1156,7 +1161,7 @@ div.show {
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="hashtag">#KaustubhWedsAishwarya</div>
+            <div class="hashtag" data-short="#K&A">#KaustubhWedsAishwarya</div>
             <div class="social-links">
                 <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -1172,7 +1177,7 @@ div.show {
 
     <!-- Audio Element -->
     <audio id="backgroundMusic" loop>
-        <source src="Vellake (mp3cut.net)" type="audio/mpeg">
+        <source src="Vellake (mp3cut.net).mp3" type="audio/mpeg">
     </audio>
 
     <script>
