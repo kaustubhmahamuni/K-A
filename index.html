@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaustubh & Aishwarya | Two Hearts, One Beat</title>
+    <title>Kaustubh & Aishwarya </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
@@ -830,6 +833,30 @@ div.show {
                 opacity: 0;
             }
         }
+        /* Desktop: show on left */
+#scrollTopBtn,
+#whatsappBtn {
+  left: 1.5rem;
+  right: auto;
+}
+
+/* Mobile (max-width 768px): move to right side */
+@media (max-width: 768px) {
+  #scrollTopBtn,
+  #whatsappBtn {
+    left: auto;
+    right: 1.5rem;
+  }
+
+  #whatsappBtn {
+    bottom: 5rem; /* keeps it above scroll button */
+  }
+
+  #scrollTopBtn {
+    bottom: 1.5rem;
+  }
+}
+
     </style>
 </head>
 <body>
@@ -1026,7 +1053,94 @@ div.show {
         </div>
     </div>
 
-    <script>
+   
+    <!-- RSVP 
+    <section id="rsvp">
+        <div class="container">
+            <h2 class="section-title">Join Our Celebration</h2>
+            <div class="rsvp-form">
+                <form id="rsvpForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" class="form-control" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message for the Couple</label>
+                        <textarea id="message" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Confirm Attendance</button>
+                </form>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Wishes -->
+    <section id="wishes">
+        <div class="container">
+            <h2 class="section-title">Blessings & Wishes</h2>
+            <div class="wishes-container">
+                <div class="wish-bubble">
+                    <div class="wish-author">MOM DAD</div>
+                    <div class="wish-text">Wishing you both a lifetime of love and happiness together!</div>
+                </div>
+                <div class="wish-bubble">
+                    <div class="wish-author">Aaji Baba</div>
+                    <div class="wish-text">May your journey together be filled with endless joy and beautiful moments.</div>
+                </div>
+                <div class="wish-bubble">
+                    <div class="wish-author">Friends</div>
+                    <div class="wish-text">So happy for you both! Can't wait to celebrate your special day.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <div class="music-player">
+                <button class="music-toggle" id="musicToggle">
+                    <i class="fas fa-music"></i>
+                </button>
+               
+            </div>
+    <button id="scrollTopBtn"
+    class="fixed bottom-6 left-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-transform transform translate-y-32 opacity-0 ease-in-out duration-300 z-50">
+    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+        width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" d="m5 15 7-7 7 7" />
+    </svg>
+</button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="hashtag" data-short="#K&A">#KaustubhWedsAishwarya</div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+            </div>
+           
+            <div class="copyright">
+                &copy; 2026 Kaustubh & Aishwarya. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="Vellake (mp3cut.net).mp3" type="audio/mpeg">
+    </audio>
+     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const galleryItems = document.querySelectorAll('.gallery-item');
             const lightbox = document.querySelector('.lightbox');
@@ -1102,83 +1216,22 @@ div.show {
             }
         });
     </script>
-    <!-- RSVP 
-    <section id="rsvp">
-        <div class="container">
-            <h2 class="section-title">Join Our Celebration</h2>
-            <div class="rsvp-form">
-                <form id="rsvpForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="guests">Number of Guests</label>
-                        <select id="guests" class="form-control" required>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5+</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message for the Couple</label>
-                        <textarea id="message" class="form-control"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Confirm Attendance</button>
-                </form>
-            </div>
-        </div>
-    </section>-->
+ <script>
+        let topBtn = document.getElementById("topBtn");
 
-    <!-- Wishes -->
-    <section id="wishes">
-        <div class="container">
-            <h2 class="section-title">Blessings & Wishes</h2>
-            <div class="wishes-container">
-                <div class="wish-bubble">
-                    <div class="wish-author">MOM DAD</div>
-                    <div class="wish-text">Wishing you both a lifetime of love and happiness together!</div>
-                </div>
-                <div class="wish-bubble">
-                    <div class="wish-author">Aaji Baba</div>
-                    <div class="wish-text">May your journey together be filled with endless joy and beautiful moments.</div>
-                </div>
-                <div class="wish-bubble">
-                    <div class="wish-author">Friends</div>
-                    <div class="wish-text">So happy for you both! Can't wait to celebrate your special day.</div>
-                </div>
-            </div>
-        </div>
-    </section>
- <div class="music-player">
-                <button class="music-toggle" id="musicToggle">
-                    <i class="fas fa-music"></i>
-                </button>
-               
-            </div>
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="hashtag" data-short="#K&A">#KaustubhWedsAishwarya</div>
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
-            </div>
-           
-            <div class="copyright">
-                &copy; 2026 Kaustubh & Aishwarya. All rights reserved.
-            </div>
-        </div>
-    </footer>
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
 
-    <!-- Audio Element -->
-    <audio id="backgroundMusic" loop>
-        <source src="Vellake (mp3cut.net).mp3" type="audio/mpeg">
-    </audio>
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+    </script>
 
     <script>
         // Preloader
