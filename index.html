@@ -814,16 +814,7 @@ div.show {
             }
         }
 
-        /* Fireworks */
-        .firework {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--primary-red);
-            animation: explode 1s forwards;
-        }
-
+        
         @keyframes explode {
             0% {
                 transform: translate(0, 0);
@@ -857,26 +848,47 @@ div.show {
    bottom: 95px;
   }
 }
-        .firework {
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    z-index: 9999;
-    animation: explode 1.5s forwards;
+        
+.confetti-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:9999;
 }
 
-@keyframes explode {
-    from {
-        transform: translate(0,0) scale(1);
-        opacity: 1;
-    }
-    to {
-        transform: translate(var(--tx), var(--ty)) scale(0);
-        opacity: 0;
-    }
+.confetti{
+    position:absolute;
+    width:12px;
+    height:20px;
+    background:#ff4d6d;
+    animation:fall 5s linear infinite;
 }
 
+.confetti:nth-child(1){left:5%;background:#ff4d6d;animation-delay:0s;}
+.confetti:nth-child(2){left:15%;background:#ffd700;animation-delay:1s;}
+.confetti:nth-child(3){left:25%;background:#00c853;animation-delay:2s;}
+.confetti:nth-child(4){left:35%;background:#00bcd4;animation-delay:3s;}
+.confetti:nth-child(5){left:45%;background:#9c27b0;animation-delay:4s;}
+.confetti:nth-child(6){left:55%;background:#ff9800;animation-delay:1.5s;}
+.confetti:nth-child(7){left:65%;background:#e91e63;animation-delay:2.5s;}
+.confetti:nth-child(8){left:75%;background:#03a9f4;animation-delay:3.5s;}
+.confetti:nth-child(9){left:85%;background:#4caf50;animation-delay:0.5s;}
+.confetti:nth-child(10){left:95%;background:#ffc107;animation-delay:2s;}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-100px) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
     </style>
 </head>
 <body>
@@ -932,21 +944,22 @@ div.show {
                     <div class="countdown-number" id="seconds">00</div>
                     <div class="countdown-label">Seconds</div>
                 </div>
-                <div id="celebrationMessage"
-     style="
-     display:none;
-     font-size:2.5rem;
-     font-weight:bold;
-     color:#e63946;
-     margin-top:20px;
-     animation: heartbeat 1.5s infinite;">
-     💖 Kaustubh ❤️ Aishwarya 💖
-     <br>
-     🎊 Just Married 🎊
-</div>
+               
             </div>
             <!-- <a href="#rsvp" class="btn">Save The Date</a> -->
         </div>
+        <div class="confetti-container">
+    <span class="confetti"></span>
+    <span class="confetti"></span>
+    <span class="confetti"></span>
+    <span class="confetti"></span>
+    <span class="confetti"></span>
+    <span class="confetti"></span>
+    <span class="confetti"></span>
+    <span class="confetti"></span>
+    <span class="confetti"></span>
+    <span class="confetti"></span>
+</div>
         <div class="ecg-line"></div>
     </section>
 
