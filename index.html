@@ -1448,6 +1448,20 @@ div.show {
     </script>
 <script>
 
+    
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      // Optional: observer.unobserve(entry.target); // fade only once
+    }
+  });
+});
+
+document.querySelectorAll("div").forEach(div => {
+  observer.observe(div);
+});
+</script>
     <script>
         // Enhanced Fireworks
 function createFireworks() {
@@ -1495,18 +1509,5 @@ function createFireworks() {
         }, 1500);
     }
         </script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-      // Optional: observer.unobserve(entry.target); // fade only once
-    }
-  });
-});
-
-document.querySelectorAll("div").forEach(div => {
-  observer.observe(div);
-});
-</script>
 </body>
 </html>
