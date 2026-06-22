@@ -857,6 +857,25 @@ div.show {
    bottom: 95px;
   }
 }
+        .firework {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    z-index: 9999;
+    animation: explode 1.5s forwards;
+}
+
+@keyframes explode {
+    from {
+        transform: translate(0,0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translate(var(--tx), var(--ty)) scale(0);
+        opacity: 0;
+    }
+}
 
     </style>
 </head>
@@ -913,6 +932,18 @@ div.show {
                     <div class="countdown-number" id="seconds">00</div>
                     <div class="countdown-label">Seconds</div>
                 </div>
+                <div id="celebrationMessage"
+     style="
+     display:none;
+     font-size:2.5rem;
+     font-weight:bold;
+     color:#e63946;
+     margin-top:20px;
+     animation: heartbeat 1.5s infinite;">
+     💖 Kaustubh ❤️ Aishwarya 💖
+     <br>
+     🎊 Just Married 🎊
+</div>
             </div>
             <!-- <a href="#rsvp" class="btn">Save The Date</a> -->
         </div>
@@ -1416,6 +1447,54 @@ div.show {
         });
     </script>
 <script>
+
+    <script>
+        // Enhanced Fireworks
+function createFireworks() {
+    const colors = [
+        '#ff0000',
+        '#ff69b4',
+        '#ffd700',
+        '#00ffff',
+        '#ffffff',
+        '#ff4500'
+    ];
+
+    const centerX = Math.random() * window.innerWidth;
+    const centerY = Math.random() * (window.innerHeight / 2);
+
+    for (let i = 0; i < 80; i++) {
+        const firework = document.createElement('div');
+        firework.classList.add('firework');
+
+        const color = colors[Math.floor(Math.random() * colors.length)];
+
+        firework.style.backgroundColor = color;
+        firework.style.boxShadow = `0 0 15px ${color}`;
+
+        firework.style.left = `${centerX}px`;
+        firework.style.top = `${centerY}px`;
+
+        const angle = Math.random() * Math.PI * 2;
+        const radius = Math.random() * 250;
+
+        firework.style.setProperty(
+            '--tx',
+            `${Math.cos(angle) * radius}px`
+        );
+
+        firework.style.setProperty(
+            '--ty',
+            `${Math.sin(angle) * radius}px`
+        );
+
+        document.body.appendChild(firework);
+
+        setTimeout(() => {
+            firework.remove();
+        }, 1500);
+    }
+        </script>
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
